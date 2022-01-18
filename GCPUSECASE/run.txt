@@ -1,0 +1,12 @@
+
+mvn compile exec:java -Dexec.mainClass=MyPipeline \
+-D exec.args="--project=nttdata-c4e-bde --jobName=usecase1-labid-14 \
+--region=europe-west4 \
+--serviceAccount=c4e-uc1-sa-14@nttdata-c4e-bde.iam.gserviceaccount.com \
+--maxNumWorkers=1 --workerMachineType=n1-standard-1 \
+--gcpTempLocation=gs://c4e-uc1-dataflow-temp-14/temp \
+--stagingLocation=gs://c4e-uc1-dataflow-temp-14/staging \
+--subnetwork=regions/europe-west4/subnetworks/subnet-uc1-14 \
+--inputSubscriptionName=projects/nttdata-c4e-bde/subscriptions/uc1-input-topic-sub-14 \
+--DLQTopicName=projects/nttdata-c4e-bde/topics/uc1-dlq-topic-14 \
+--streaming"
